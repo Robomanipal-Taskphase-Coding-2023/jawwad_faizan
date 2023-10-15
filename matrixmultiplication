@@ -1,0 +1,57 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+	int a, b, c, d; //axb being dimensions of mat1, cxd being dimensions of mat2\
+
+	cout << "Enter first matrix dimensions(as a b, meaning axb): ";
+	cin >> a >> b;
+	cout << endl << "Enter second matrix dimensions(as c d, meaning c x b): ";
+	cin >> c >> d;
+	cout << endl;
+
+	vector <vector<int>> mat1(a, vector<int>(b)), mat2(c, vector<int> (d)), mat3(a, vector<int> (d,0));
+
+	if (b == c) {
+
+		cout << "Enter 1st matrix elements: " << endl;
+
+		for (int i = 0; i < a; i++) {
+			for (int j = 0; j < b; j++) {
+				cin >> mat1[i][j];
+			}
+
+		}
+
+		cout << endl << "Enter 2nd matrix elements: " << endl;
+
+
+		for (int i = 0; i < c; i++) {
+			for (int j = 0; j < d; j++) {
+				cin >> mat2[i][j];
+			}
+		}
+
+
+		for (int i = 0; i < a; i++) {
+			for (int j = 0; j < d; j++) {
+				for (int k = 0; k < c; k++)
+					mat3[i][j] += (mat1[i][k] * mat2[k][j]);
+
+			}
+		}
+
+		cout << "The multiplied matrix is: " << endl;
+
+		for (int i = 0; i < a; i++) {
+			for (int j = 0; j < d; j++) {
+				cout << mat3[i][j] << " ";
+			}
+			cout << endl;
+		}
+	}
+	else
+		cout << "Matrices incompatible";
+
+}
