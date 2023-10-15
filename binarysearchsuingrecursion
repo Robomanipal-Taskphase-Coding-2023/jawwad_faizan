@@ -1,0 +1,43 @@
+#include <iostream>
+using namespace std;
+
+int binsearch(int arr[], int target, int left, int right) {
+    if (left > right) {
+        return -1;
+    }
+
+    int mid = left + (right - left) / 2;
+
+    if (arr[mid] == target) {
+        return mid;
+    } else if (arr[mid] > target) {
+        return binsearch(arr, target, left, mid - 1);
+    } else {
+        return binsearch(arr, target, mid + 1, right);
+    }
+}
+
+int main() {
+    int numEl, findTarget;
+    cout << "Enter the number of elements in the array: ";
+    cin >> numEl;
+
+    int data[numEl];
+    cout << "Enter the sorted array elements: ";
+    for (int i = 0; i < numEl; i++) {
+        cin >> data[i];
+    }
+
+    cout << "Enter the element to search for: ";
+    cin >> findTarget;
+
+    int result = binsearch(data, findTarget, 0, numEl - 1);
+
+    if (result != -1) {
+        cout << "Element found at index " << result << endl;
+    } else {
+        cout << "Element not found in the array." << endl;
+    }
+
+    return 0;
+}
