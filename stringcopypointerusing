@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+void copyString(char* destination, char* source)
+{
+    while (*source != '\0')
+    {
+        *destination = *source;
+        destination++;
+        source++;
+    }
+    *destination = '\0';
+}
+
+int main()
+{
+    char sourceString[100], destinationString[100];
+
+    cout << "Enter a string: ";
+    cin.getline(sourceString, 100); // Read the entire line, including spaces
+    copyString(destinationString, sourceString);
+
+    cout << "The copied string is: " << destinationString << endl;
+    return 0;
+}
