@@ -1,0 +1,121 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+vector<vector<int>> matmult(vector<vector<int>> mat1, vector<vector<int>> mat2) {
+	int a, b, c, d; //axb being dimensions of mat1, cxd being dimensions of mat2
+
+	a = mat1.size();
+	b = mat1[0].size();
+	c = mat2.size();
+	d = mat2[0].size();
+
+	vector <vector<int>> mat3(a, vector<int>(d, 0));
+
+		for (int i = 0; i < a; i++) {
+			for (int j = 0; j < d; j++) {
+				for (int k = 0; k < c; k++)
+					mat3[i][j] += (mat1[i][k] * mat2[k][j]);
+
+			}
+		}
+
+		return mat3;
+
+		
+	}
+
+
+
+vector<vector<int>> mattran(vector<vector<int>> mat) {
+
+	vector<vector<int>> trans(mat[0].size(), vector<int>(mat.size()));
+
+	
+	for (int i = 0; i < mat[0].size(); i++) {
+		for (int j = 0; j < mat.size(); j++) {
+			trans[i][j] = mat[j][i];
+		}
+	}
+	
+	return trans;
+}
+
+int main() {
+	int a, b, c, d;
+	
+	cout << "Enter a b as axb of 1st matrix: ";
+	cin >> a >> b;
+	cout << " Enter c d as cxd of 2nd matrix: ";
+	cin >> c >> d;
+
+	vector<vector<int>> mat1(a, vector<int>(b)), mat2(c, vector<int>(d)), mat3(a, vector<int>(d));
+
+	cout << "Enter 1st matrix elements(A): " << endl;
+
+	for (int i = 0; i < a; i++) {
+		for (int j = 0; j < b; j++) {
+			cin >> mat1[i][j];
+		}
+
+	}
+
+	cout << "Enter 2nd matrix elements(B): " << endl;
+
+	for (int i = 0; i < c; i++) {
+		for (int j = 0; j < d; j++) {
+			cin >> mat2[i][j];
+		}
+
+	}
+	if (b == c) {
+		mat3 = matmult(mat1, mat2);
+
+		cout << "AxB: \n";
+
+		for (int i = 0; i < a; i++) {
+			for (int j = 0; j < d; j++) {
+				cout << mat3[i][j] << " ";
+			}
+			cout << endl;
+		}
+
+
+		mat1 = mattran(mat1);
+		mat2 = mattran(mat2);
+
+		cout << "A': \n";
+
+		for (int i = 0; i < b; i++) {
+			for (int j = 0; j < a; j++) {
+				cout << mat1[i][j] << " ";
+			}
+			cout << endl;
+		}
+
+		cout << "B': \n";
+
+		for (int i = 0; i < d; i++) {
+			for (int j = 0; j < c; j++) {
+				cout << mat2[i][j] << " ";
+			}
+			cout << endl;
+		}
+
+		mat3 = matmult(mat2, mat1);
+
+		cout << "B'A': \n";
+
+		for (int i = 0; i < d; i++) {
+			for (int j = 0; j < a; j++) {
+				cout << mat3[i][j] << " ";
+			}
+			cout << endl;
+		}
+
+		cout << "as you can see AB = B'A'";
+
+	}
+	else
+		cout << "incompatible";
+}
