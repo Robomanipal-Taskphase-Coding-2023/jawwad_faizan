@@ -1,0 +1,37 @@
+#include <iostream>
+#include <vector>
+#include <string>
+#include <algorithm>
+
+using namespace std;
+
+bool compareLength(const string& a, const string& b) {
+    return a.length() < b.length();
+}
+
+void sortStringsIn2DArray(vector<string>& input) {
+   
+    sort(input.begin(), input.end(), compareLength);
+
+    for (string& s : input) {
+        sort(s.begin(), s.end());
+    }
+}
+
+int main() {
+    vector<string> input = { "word", "number", "cat" };
+
+    cout << "input:" << endl;
+    for (const string& row : input) {
+        cout << row << endl;
+    }
+
+    sortStringsIn2DArray(input);
+
+    cout << "output:" << endl;
+    for (const string& row : input) {
+        cout << row << endl;
+    }
+
+
+}
