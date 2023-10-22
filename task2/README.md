@@ -30,6 +30,10 @@ $ git checkout <branch_name>  //switches to newly created branch
 
 $ git merge <branch_name>  //merges newly created branch to master branch
 
+<h2>What is Github?</h2>
+
+GitHub is a web-based platform for version control and collaborative software development. It allows users to host, manage, and share code repositories, facilitating teamwork and tracking changes in code. Developers and teams use GitHub for code collaboration, project management, and open-source contributions. It's a vital tool for the software development community.
+
 <h2>How to link Git to remote repositories like GitHub?</h2>
 
 When first creating a repository, a screen like this should appear
