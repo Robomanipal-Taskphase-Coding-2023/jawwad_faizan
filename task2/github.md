@@ -2,6 +2,12 @@
 
 It is a VCS(Version Control system) for tracking changes in computer files, it is decentralised, coordinates work between multiple developers and tells who made what changes when
 
+<h2>How to install git?</h2>
+
+We need to go to the website https://git-scm.com/ and install Git from there, it enables us to use all its functionalities through a command prompt like window called Git bash, which looks like this
+![image](https://github.com/Robomanipal-Taskphase-Coding-2023/jawwad_faizan/assets/147326852/f0a60d32-daa0-470a-9b38-eff2d54dd043)
+
+
 <h2>Basic Commands</h2>
 
 $ git init  // Initialize Local Git Repository
