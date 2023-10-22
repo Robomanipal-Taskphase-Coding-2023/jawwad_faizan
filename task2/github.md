@@ -5,14 +5,23 @@ It is a VCS(Version Control system) for tracking changes in computer files, it i
 <h2>Basic Commands</h2>
 
 $ git init  // Initialize Local Git Repository
+
 $ git add <file>  // Add File(s) To Index
+
 $ git status  // Check Status Of Working Tree
+
 $ git commit  // Commit Changes In Index
+
 $ git push  // Push To Remote Repository
+
 $ git pull  // Pull Latest From Remote Repository
+
 $ git clone  // Clone Repository Into A New Directory
+
 $ git branch  // creates branches other than the master branch
+
 $ git checkout <branch_name>  //switches to newly created branch
+
 $ git merge <branch_name>  //merges newly created branch to master branch
 
 <h2>How to link Git to remote repositories like GitHub?</h2>
