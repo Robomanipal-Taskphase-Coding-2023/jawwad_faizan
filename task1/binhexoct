@@ -1,0 +1,15 @@
+#include <iostream>
+#include <bitset>
+using namespace std;
+
+int main() {
+    int x;
+
+    cout << "Enter a decimal number: ";
+    cin >> x;
+
+    cout << "Hexadecimal: 0x" << hex << x << endl;
+    cout << "Octal: 0" << oct << x << endl;
+    cout << "Binary: " << bitset<8>(x) << endl;
+
+}
